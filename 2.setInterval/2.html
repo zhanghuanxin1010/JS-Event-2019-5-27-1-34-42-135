@@ -1,0 +1,38 @@
+﻿<html>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>定时器示例</title>
+  </head>
+  <body>
+  
+  <input type="text" id="result">
+  
+  <input type="button" value="开始" >
+  <input type="button" value="结束" >
+  
+  <script>
+     // write your code here
+      // ......
+    var txt=document.getElementsByTagName("input")[0];
+     var start=document.getElementsByTagName("input")[1];
+     var end=document.getElementsByTagName("input")[2];
+     var timer=null;var n=0;
+   start.onclick=function(){
+                 clearInterval(timer);
+                 timer=setInterval(function(){
+                           n++;
+                        var t=parseInt(n/60);
+                        var m=parseInt(n%60);
+                    txt.value=print(t)+":"+print(m);                        
+                                  },1000/60);
+              };
+       end.onclick=function(){
+                  clearInterval(timer);
+                    }
+function print(n)
+{return n<10?"0"+n:""+n;}
+</script>
+  </body>
+  </html>
